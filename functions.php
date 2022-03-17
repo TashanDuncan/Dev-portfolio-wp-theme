@@ -38,5 +38,26 @@ function devPortfolio_register_scripts(){
 
 add_action('wp_enqueue_scripts', 'devPortfolio_register_scripts');
  
+function add_skills_post_type()
+{
+    $args = array(
+        
+        'labels' => array(
+            'name' => 'Skills',
+            'singular_name' => 'Skill'
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-insert',
+        'supports' => array('title', 'editor'),
+        
+    );
 
+    register_post_type('skills', $args);
+
+
+
+}
+
+add_action('init', 'add_skills_post_type')
 ?>
