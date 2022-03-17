@@ -37,5 +37,6 @@ function devPortfolio_register_scripts(){
 }
 
 add_action('wp_enqueue_scripts', 'devPortfolio_register_scripts');
+ 
 
 ?>
