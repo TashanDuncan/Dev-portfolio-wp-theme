@@ -55,9 +55,27 @@ function add_skills_post_type()
 
     register_post_type('skills', $args);
 
+}
 
+function add_testimonials_post_type()
+{
+    $args = array(
+        
+        'labels' => array(
+            'name' => 'Testimonials',
+            'singular_name' => 'Testimonial'
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-format-quote',
+        'supports' => array('title', 'editor'),
+        
+    );
+
+    register_post_type('testimonials', $args);
 
 }
 
-add_action('init', 'add_skills_post_type')
+add_action('init', 'add_skills_post_type');
+add_action('init', 'add_testimonials_post_type');
 ?>
