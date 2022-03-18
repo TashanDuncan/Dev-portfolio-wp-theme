@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	
+
 
 	<!-- Meta -->
 	<meta charset="utf-8">
@@ -51,40 +51,20 @@
 					</div>
 					<!--//profile-section-->
 
-					<ul class="navbar-nav flex-column text-left">
-						<li class="nav-item active">
-							<a class="nav-link" href="index.html"><i class="fas fa-user fa-fw mr-2"></i>About Me<span class="sr-only">(current)</span></a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="portfolio.html"><i class="fas fa-laptop-code fa-fw mr-2"></i>Portfolio</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="services.html"><i class="fas fa-briefcase fa-fw mr-2"></i>Services &amp; Pricing</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="resume.html"><i class="fas fa-file-alt fa-fw mr-2"></i>Resume</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="blog-home.html"><i class="fas fa-blog fa-fw mr-2"></i>Blog</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="contact.html"><i class="fas fa-envelope-open-text fa-fw mr-2"></i>Contact</a>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i class="fas fa-cogs fa-fw mr-2"></i>More Pages
-							</a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="project.html">Project Page</a>
-								<a class="dropdown-item" href="blog-home.html">Blog Home 1</a>
-								<a class="dropdown-item" href="blog-home-alt.html">Blog Home 2</a>
-								<a class="dropdown-item" href="blog-post.html">Blog Post</a>
-							</div>
-						</li>
-					</ul>
+					<?php
+					wp_nav_menu(
+						array(
+							'menu' => 'primary',
+							'container' => '',
+							'theme_location' => 'primary',
+							'items_wrap' => '<ul id="" class="navbar-nav flex-column text-left">%3$s</ul>'
+						)
+					)
+
+					?>
 
 					<div class="my-2">
-						<a class="btn btn-primary" href="contact.html" target="_blank"><i class="fas fa-paper-plane mr-2"></i>Hire Me</a>
+						<a class="btn btn-primary" href="contact.html" target="_blank"><i class="fas fa-paper-plane mr-2"></i>Contact Me</a>
 					</div>
 
 

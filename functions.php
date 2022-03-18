@@ -9,6 +9,17 @@ function devPortfolio_theme_support(){
 
 add_action('after_setup_theme','devPortfolio_theme_support');
 
+function devPortfolio_menus(){
+
+    $locations = array(
+        'primary' => 'Primary Sidebar'
+    );
+
+    register_nav_menus($locations);
+}
+
+add_action('init', 'devPortfolio_menus');
+
 function devPortfolio_register_styles(){
 
     $version = wp_get_theme()->get('Version');
@@ -76,6 +87,26 @@ function add_testimonials_post_type()
 
 }
 
+function add_projects_post_type()
+{
+    $args = array(
+        
+        'labels' => array(
+            'name' => 'Projects',
+            'singular_name' => 'Project'
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-portfolio',
+        'supports' => array('title', 'editor'),
+        
+    );
+
+    register_post_type('projects', $args);
+
+}
+
 add_action('init', 'add_skills_post_type');
 add_action('init', 'add_testimonials_post_type');
+add_action('init', 'add_projects_post_type');
 ?>
