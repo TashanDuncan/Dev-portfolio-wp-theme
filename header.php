@@ -1,3 +1,8 @@
+<?php
+$headerName = get_field('your_name', 7);
+$headerTitle = get_field('job_title', 7);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +30,7 @@
 
 	<header class="header text-center">
 		<div class="force-overflow">
-			<h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Simon Doe</a></h1>
+			<h1 class="blog-name pt-lg-4 mb-0"><a href="/"><?php echo $headerName?></a></h1>
 
 			<nav class="navbar navbar-expand-lg navbar-dark">
 
@@ -35,16 +40,23 @@
 
 				<div id="navigation" class="collapse navbar-collapse flex-column">
 					<div class="profile-section pt-3 pt-lg-0">
-						<img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/profile.png" alt="image">
+						<?php
+						if(function_exists('the_custom_logo')){
+							
+							$custom_logo_id = get_theme_mod('custom_logo');
+							$logo = wp_get_attachment_image_src($custom_logo_id);
+						}
+						?>
+						<img class="profile-image mb-3 rounded-circle mx-auto" src="<?php echo $logo[0] ?>" alt="image">
 
-						<div class="bio mb-3">Hi, my name is Simon Doe and I'm a senior software engineer. Welcome to my personal website!</div>
+						<div class="bio mb-3">Hi, my name is <?php echo $headerName?> and I'm a <?php echo $headerTitle?>. Welcome to my personal website!</div>
 						<!--//bio-->
 						<ul class="social-list list-inline py-2 mx-auto">
-							<li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
-							<li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
-							<li class="list-inline-item"><a href="#"><i class="fab fa-github-alt fa-fw"></i></a></li>
-							<li class="list-inline-item"><a href="#"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
-							<li class="list-inline-item"><a href="#"><i class="fab fa-codepen fa-fw"></i></a></li>
+							<li class="list-inline-item"><a href="https://twitter.com/codingmugen" target="_blank" rel="noopener"><i class="fab fa-twitter fa-fw"></i></a></li>
+							<li class="list-inline-item"><a href="https://www.linkedin.com/in/tashanduncan/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
+							<li class="list-inline-item"><a href="https://github.com/TashanDuncan" target="_blank" rel="noopener"><i class="fab fa-github-alt fa-fw"></i></a></li>
+							<li class="list-inline-item"><a href="https://stackoverflow.com/users/14390598/tay-duncan" target="_blank" rel="noopener"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
+							<li class="list-inline-item"><a href="https://www.instagram.com/codingmugen/" target="_blank" rel="noopener"><i class="fab fa-instagram fa-fw"></i></a></li>
 						</ul>
 						<!--//social-list-->
 						<hr>
