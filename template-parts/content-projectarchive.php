@@ -3,10 +3,10 @@
         <div class="text-center">
             <ul id="filters" class="filters mb-5 mx-auto pl-0">
                 <li class="type active mb-3 mb-lg-0" data-filter="*">All</li>
-                <li class="type  mb-3 mb-lg-0" data-filter=".webapp">We App</li>
-                <li class="type  mb-3 mb-lg-0" data-filter=".mobileapp">Mobile App</li>
+                <li class="type  mb-3 mb-lg-0" data-filter=".fullstack">Fullstack</li>
                 <li class="type  mb-3 mb-lg-0" data-filter=".frontend">Frontend</li>
                 <li class="type  mb-3 mb-lg-0" data-filter=".backend">Backend</li>
+                <li class="type  mb-3 mb-lg-0" data-filter=".featured">Featured<i class="fa fa-solid fa-star ml-1"></i></li>
             </ul>
             <!--//filters-->
         </div>
@@ -15,8 +15,18 @@
                     <?php
                     $intro = get_field('project_intro');
                     $client = get_field('client_name');
+                    $types = get_field('type');
+                    $featured = get_field('featured');
                     ?>
-                    <div class="isotope-item col-md-6 mb-5 mobileapp frontend">
+
+                    <div class="isotope-item col-md-6 mb-5 
+                    <?php if ($featured) : ?>
+                        <?php echo 'featured' ?>
+                    <?php endif; ?>
+                    <?php foreach ($types as $type) : ?>
+                        <?php echo $type . ' '; ?>
+                        <?php endforeach; ?>
+                    ">
                         <div class="card project-card">
                             <div class="row no-gutters">
                                 <div class="col-lg-4 card-img-holder">

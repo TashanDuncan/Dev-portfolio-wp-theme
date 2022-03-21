@@ -43,7 +43,10 @@ function devPortfolio_register_scripts(){
     wp_enqueue_script('font-awesome', get_template_directory_uri() . "/assets/fontawesome/js/all.js", array(), '1.0', 'all');
     wp_enqueue_script('js-cookie', get_template_directory_uri() . "/assets/plugins/js-cookie.min.js", array(), '1.0', 'all');
     wp_enqueue_script('dark-mode', get_template_directory_uri() . "/assets/js/dark-mode.js", array('jquery'), '1.0', 'all');
-   
+    wp_enqueue_script('isotope-custom', get_template_directory_uri() . "/assets/js/isotope-custom.js", array('jquery'), '1.0', 'all');
+    wp_enqueue_script('isotope-pkgd', get_template_directory_uri() . "/assets/plugins/isotope.pkgd.min.js", array('jquery'), '1.0', 'all');
+    wp_enqueue_script('imagesloaded-pkgd', get_template_directory_uri() . "/assets/plugins/imagesloaded.pkgd.min.js", array('jquery'), '1.0', 'all');
+
 
 }
 
