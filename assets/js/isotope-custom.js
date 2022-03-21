@@ -10,6 +10,7 @@ $(document).ready(function() {
         $('.isotope').isotope({
             itemSelector: '.isotope-item',
             layoutMode: 'fitRows',
+            filter: '.featured'
         });
     });
     

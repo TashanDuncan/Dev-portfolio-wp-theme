@@ -2,11 +2,11 @@
     <div class="container">
         <div class="text-center">
             <ul id="filters" class="filters mb-5 mx-auto pl-0">
-                <li class="type active mb-3 mb-lg-0" data-filter="*">All</li>
+                <li class="type  active mb-3 mb-lg-0" data-filter=".featured">Featured<i class="fa fa-solid fa-star ml-1"></i></li>
+                <li class="type  mb-3 mb-lg-0" data-filter="*">All</li>
                 <li class="type  mb-3 mb-lg-0" data-filter=".fullstack">Fullstack</li>
                 <li class="type  mb-3 mb-lg-0" data-filter=".frontend">Frontend</li>
                 <li class="type  mb-3 mb-lg-0" data-filter=".backend">Backend</li>
-                <li class="type  mb-3 mb-lg-0" data-filter=".featured">Featured<i class="fa fa-solid fa-star ml-1"></i></li>
             </ul>
             <!--//filters-->
         </div>

@@ -47,7 +47,7 @@ $headerTitle = get_field('job_title', 7);
 							$logo = wp_get_attachment_image_src($custom_logo_id);
 						}
 						?>
-						<img class="profile-image mb-3 rounded-circle mx-auto" src="<?php echo $logo[0] ?>" alt="image">
+						<a href="/"><img class="profile-image mb-3 rounded-circle mx-auto" src="<?php echo $logo[0] ?>" alt="<?php echo $headerName?>"></a>
 
 						<div class="bio mb-3">Hi, my name is <?php echo $headerName?> and I'm a <?php echo $headerTitle?>. Welcome to my personal website!</div>
 						<!--//bio-->
