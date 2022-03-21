@@ -11,29 +11,32 @@ $query = new WP_Query(array(
             <?php $logo = get_field('skill_logo');
 
             switch ($logo) {
-                case 'htmlandcss: HTML&CSS':
+                case 'htmlandcss':
                     $faLogo = '<i class="fab fa-html5 mr-2"></i><i class="fab fa-css3-alt"></i>';
                     break;
-                case 'javascript: JavaScript':
+                case 'javascript':
                     $faLogo = '<i class="fab fa-js-square"></i>';
                     break;
-                case 'php: PHP':
+                case 'php':
                     $faLogo = '<i class="fab fa-php"></i>';
                     break;
-                case 'laravel: Laravel':
+                case 'laravel':
                     $faLogo = '<i class="fab fa-laravel"></i>';
                     break;
-                case 'wordpress: WordPress':
+                case 'wordpress':
                     $faLogo = '<i class="fab fa-wordpress"></i>';
                     break;
-                case 'sql: SQL':
+                case 'sql':
                     $faLogo = '<i class="fa fa-database"></i>';
                     break;
-                case 'linux: Linux':
+                case 'linux':
                     $faLogo = '<i class="fab fa-linux"></i>';
                     break;
-                case 'sass: Sass':
+                case 'sass':
                     $faLogo = '<i class="fab fa-sass"></i>';
+                    break;
+                case 'react':
+                    $faLogo = '<i class="fab fa-react"></i>';
                     break;
                 default:
                     $faLogo = null;
