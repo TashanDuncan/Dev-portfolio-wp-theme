@@ -7,7 +7,7 @@ $description = get_field('description');
 $profilePicLarge = get_field('profile_photo');
 ?>
 
-<div class="main-wrapper">
+
 
 	<section class="about-me-section p-3 p-lg-5 theme-bg-light">
 		<div class="container">
@@ -255,8 +255,7 @@ $profilePicLarge = get_field('profile_photo');
 		<small class="copyright">Template Copyright &copy; <a href="https://themes.3rdwavemedia.com/" target="_blank">3rd Wave Media</a></small>
 	</footer>
 
-</div>
-<!--//main-wrapper-->
+
 <?php
 get_footer()
 ?>

@@ -95,3 +95,5 @@ $headerTitle = get_field('job_title', 7);
 		</div>
 		<!--//force-overflow-->
 	</header>
+
+	<div class="main-wrapper">
