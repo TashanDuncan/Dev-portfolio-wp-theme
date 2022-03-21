@@ -98,7 +98,7 @@ function add_projects_post_type()
         'public' => true,
         'has_archive' => true,
         'menu_icon' => 'dashicons-portfolio',
-        'supports' => array('title', 'editor'),
+        'supports' => array('title', 'thumbnail'),
         
     );
 
