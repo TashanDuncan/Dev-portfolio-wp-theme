@@ -14,7 +14,8 @@
         $results = get_field('results');
         $img_1 = get_field('img_1');
         $img_2 = get_field('img_2');
-        $testimonials = get_field('testimonials')
+        $testimonials = get_field('testimonials');
+        $metrics = get_field('metrics');
         ?>
 
         <section class="cta-section theme-bg-light py-5">
@@ -55,13 +56,21 @@
                                 <?php endif; ?>
 
                             </ul>
-                            <div class="client-bio mb-4">Short description of the client and project requirements. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</div>
-                            <h4 class="subheading mb-3">Project Requirements</h4>
-                            <ul class="mb-0">
-                                <li class="mb-2">Requirement lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                                <li class="mb-2">Requirement donec pede justo, fringilla vel, aliquet nec.</li>
-                                <li class="mb-2">Requirement phasellus ullamcorper ipsum rutrum nunc. </li>
-                            </ul>
+                            <?php if ($short_desc) : ?>
+                                <div class="client-bio mb-4"><?php echo $short_desc ?></div>
+                            <?php endif; ?>
+                            <?php if ($requirements) : ?>
+                                <h4 class="subheading mb-3">Project Requirements</h4>
+                                <?php ?>
+                                <ul class="mb-0">
+                                    <?php
+                                    foreach ($requirements as $requirement) : ?>
+                                        <li class="mb-2">
+                                            <?php echo $requirement['req']; ?>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <!--//media-body-->
@@ -69,114 +78,105 @@
                 <!--//project-meta-->
                 <div class="project-sections py-5">
                     <div class="project-section mb-5">
-                        <h3 class="project-section-title mb-3">Project Overview</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. </p>
+                        <?php if ($overview) : ?>
+                            <h3 class="project-section-title mb-3">Project Overview</h3>
+                            <p><?php echo $overview ?> </p>
                     </div>
                     <!--//project-section-->
-
+                <?php endif; ?>
+                <?php if ($challenges) : ?>
                     <div class="project-section mb-5">
                         <h3 class="project-section-title">The Challenge</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. </p>
+                        <p><?php echo $challenges ?> </p>
 
                     </div>
                     <!--//project-section-->
-
+                <?php endif; ?>
+                <div class="row mt-5">
+                    <?php if ($img_1) : ?>
+                        <div class="col-12 col-lg-6 mb-5">
+                            <img class="img-fluid rounded" src="<?php echo $img_1 ?>" alt="image">
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($img_2) : ?>
+                        <div class="col-12 col-lg-6 mb-5">
+                            <img class="img-fluid rounded" src="<?php echo $img_2 ?>" alt="image">
+                        </div>
+                    <?php endif; ?>
+                </div>
+                <?php if ($approach) : ?>
                     <div class="project-section mb-5">
                         <h3 class="project-section-title">The Approach &amp; Solution</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. </p>
-                        <div class="row mt-5">
-                            <div class="col-12 col-lg-6 mb-5">
-                                <img class="img-fluid rounded" src="assets/images/project/project-figure-1.jpg" alt="image">
-                            </div>
-                            <div class="col-12 col-lg-6 mb-5">
-                                <img class="img-fluid rounded" src="assets/images/project/project-figure-2.jpg" alt="image">
-                            </div>
-                        </div>
-
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. </p>
-
+                        <p> <?php echo $approach ?></p>
                     </div>
                     <!--//project-section-->
-
+                <?php endif; ?>
+                <?php if ($results || $metrics) : ?>
                     <div class="project-section mb-5">
                         <h3 class="project-section-title mb-3">The Results</h3>
 
                         <div class="metrics mb-4">
                             <div class="row">
-                                <div class="metric col-6 col-xl-3 mb-3">
-                                    <div class="inner p-3 theme-bg-light">
-                                        <div class="metric-name">Efficiency</div>
-                                        <div class="metric-data mb-2">20% <span class="unit">up</span></div>
-                                        <div class="metric-desc">Metric description lorem ipsum dolor sit amet.</div>
+                                <?php foreach ($metrics as $metric) : ?>
+                                    <div class="metric col-6 col-xl-3 mb-3">
+                                        <div class="inner p-3 theme-bg-light">
+                                            <div class="metric-name"><?php echo $metric['name'] ?></div>
+                                            <div class="metric-data mb-2"><?php echo $metric['data'] ?>
+                                                <?php if ($metric['unit']) : ?>
+                                                    <span class="unit"><?php echo $metric['unit'] ?></span>
+                                                <?php endif; ?>
+                                            </div>
+                                            <?php if ($metric['description']) : ?>
+                                                <div class="metric-desc"><?php echo $metric['description'] ?></div>
+                                            <?php endif; ?>
+                                        </div>
                                     </div>
-                                </div>
-                                <!--//metric-->
+                                    <!--//metric-->
+                                <?php endforeach; ?>
                                 <div class="metric col-6 col-xl-3 mb-3">
-                                    <div class="inner p-3 theme-bg-light">
-                                        <div class="metric-name">Customer Satisfaction</div>
-                                        <div class="metric-data mb-2">14% <span class="unit">up</span></div>
-                                        <div class="metric-desc">Metric description lorem ipsum dolor sit amet.</div>
-                                    </div>
-                                </div>
-                                <!--//metric-->
-                                <div class="metric col-6 col-xl-3 mb-3">
-                                    <div class="inner p-3 theme-bg-light">
-                                        <div class="metric-name">Sales Generated</div>
-                                        <div class="metric-data mb-2">$130K</div>
-                                        <div class="metric-desc">Metric description lorem ipsum dolor sit amet.</div>
-                                    </div>
-                                </div>
-                                <!--//metric-->
-                                <div class="metric col-6 col-xl-3 mb-3">
-                                    <div class="inner p-3 theme-bg-light">
-                                        <div class="metric-name">Overall Cost</div>
-                                        <div class="metric-data mb-2">20% <span class="unit">down</span></div>
-                                        <div class="metric-desc">Metric description lorem ipsum dolor sit amet.</div>
-                                    </div>
-                                </div>
-                                <!--//metric-->
                             </div>
                             <!--//row-->
                         </div>
                         <!--//metrics-->
 
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. </p>
+                        <p><?php echo $results ?></p>
 
                     </div>
                     <!--//project-section-->
+                <?php endif; ?>
 
-                    <?php if ($testimonials) : ?>
-                        <?php foreach ($testimonials as $testimonial) : ?>
-                            
-                            <?php $clientPhoto = get_field('client_photo',$testimonial->ID) ?>
-                            <div class="project-section mb-5">
-                                <h3 class="project-section-title mb-3">Client Testimonial</h3>
+                <?php if ($testimonials) : ?>
+                    <?php foreach ($testimonials as $testimonial) : ?>
+
+                        <?php $clientPhoto = get_field('client_photo', $testimonial->ID) ?>
+                        <div class="project-section mb-5">
+                            <h3 class="project-section-title mb-3">Client Testimonial</h3>
+                        </div>
+                        <!--//project-section-->
+                        <div class="client-quote">
+                            <div class="quote-holder">
+                                <blockquote class="quote-content">
+
+                                    <?php echo $testimonial->post_content ?>
+
+                                </blockquote>
+                                <i class="fas fa-quote-left"></i>
                             </div>
-                            <!--//project-section-->
-                            <div class="client-quote">
-                                <div class="quote-holder">
-                                    <blockquote class="quote-content">
-
-                                        <?php echo $testimonial->post_content ?>
-
-                                    </blockquote>
-                                    <i class="fas fa-quote-left"></i>
+                            <!--//quote-holder-->
+                            <div class="source-holder">
+                                <div class="source-profile">
+                                    <?php if ($clientPhoto) : ?>
+                                        <img src="<?php echo $clientPhoto ?>" alt="client photo" style="border-radius: 50%;" />
+                                    <?php endif; ?>
                                 </div>
-                                <!--//quote-holder-->
-                                <div class="source-holder">
-                                    <div class="source-profile">
-                                        <?php if ($clientPhoto) : ?>
-                                            <img src="<?php echo $clientPhoto ?>" alt="client photo" style="border-radius: 50%;"/>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="meta">
-                                        <div class="name"><?php echo $testimonial->post_title ?></div>
-                                        <div class="info"><?php echo $testimonial->job_title ?><?php if ($testimonial->company) : ?>, <?php echo $testimonial->company ?> <?php endif; ?></div>
-                                    </div>
+                                <div class="meta">
+                                    <div class="name"><?php echo $testimonial->post_title ?></div>
+                                    <div class="info"><?php echo $testimonial->job_title ?><?php if ($testimonial->company) : ?>, <?php echo $testimonial->company ?> <?php endif; ?></div>
                                 </div>
                             </div>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
+                        </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
                 </div>
             </div>
         </section>
