@@ -26,7 +26,8 @@ function devPortfolio_register_styles(){
 
     wp_enqueue_style('theme-css', get_template_directory_uri() . "/assets/css/theme-6.css", array('tiny-slider'), $version, 'all');
     wp_enqueue_style('tiny-slider', get_template_directory_uri() . "/assets/plugins/tiny-slider/tiny-slider.css", array(), '1.0', 'all');
-
+    wp_enqueue_style('monokai-sublime', get_template_directory_uri() . "/assets/plugins/highlight/styles/monokai-sublime.css", array(), '1.0', 'all');
+    
 }
 
 add_action('wp_enqueue_scripts', 'devPortfolio_register_styles');
@@ -46,6 +47,7 @@ function devPortfolio_register_scripts(){
     wp_enqueue_script('isotope-custom', get_template_directory_uri() . "/assets/js/isotope-custom.js", array('jquery'), '1.0', 'all');
     wp_enqueue_script('isotope-pkgd', get_template_directory_uri() . "/assets/plugins/isotope.pkgd.min.js", array('jquery'), '1.0', 'all');
     wp_enqueue_script('imagesloaded-pkgd', get_template_directory_uri() . "/assets/plugins/imagesloaded.pkgd.min.js", array('jquery'), '1.0', 'all');
+    wp_enqueue_script('highlight', get_template_directory_uri() . "/assets/plugins/highlight/highlight.pack.js", array('jquery'), '1.0', 'all');
 
 
 }
@@ -112,4 +114,3 @@ function add_projects_post_type()
 add_action('init', 'add_skills_post_type');
 add_action('init', 'add_testimonials_post_type');
 add_action('init', 'add_projects_post_type');
-?>
