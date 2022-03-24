@@ -76,7 +76,7 @@ $headerTitle = get_field('job_title', 7);
 					?>
 
 					<div class="my-2">
-						<a class="btn btn-primary" href="contact.html" target="_blank"><i class="fas fa-paper-plane mr-2"></i>Contact Me</a>
+						<a class="btn btn-primary" href="mailto:tay.duncan@hotmail.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-paper-plane mr-2"></i>Contact Me</a>
 					</div>
 
 

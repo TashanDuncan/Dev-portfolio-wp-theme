@@ -180,6 +180,13 @@
                 </div>
             </div>
         </section>
+        <section class=" theme-bg-light py-5 text-center">
+		    <div class="container single-col-max-width">
+			    <h2 class="title">Are you Currently looking for a Junior Developer?</h2>
+			    <p>Click below to get in touch!</p>
+                <div class="text-center"><a class="btn btn-primary" href="mailto:tay.duncan@hotmail.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-paper-plane mr-2"></i>Contact Me</a></div>
+		    </div><!--//container-->
+	    </section><!--//promo-section-->
 
 
 <?php endwhile;

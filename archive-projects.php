@@ -5,10 +5,9 @@ get_header()
     <div class="container text-center single-col-max-width">
         <h2 class="heading">Portfolio</h2>
         <div class="intro">
-            <p>Welcome to my online portfolio. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. I'm taking on freelance work at the moment. Want some help building your software?</p>
-
+            <p>Welcome to my online portfolio. I'm currently looking for a juinior developer job at the moment. Want some help building your software?</p>
         </div>
-        <a class="btn btn-primary" href="contact.html" target="_blank"><i class="fas fa-paper-plane mr-2"></i>Contact Me</a>
+        <a class="btn btn-primary" href="mailto:tay.duncan@hotmail.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-paper-plane mr-2"></i>Contact Me</a>
 
 
     </div>
