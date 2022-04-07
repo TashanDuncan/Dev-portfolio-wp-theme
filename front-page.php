@@ -27,7 +27,7 @@ $profilePicLarge = get_field('profile_photo');
 					<!--//bio-->
 					<div class="mb-4">
 						<a class="btn btn-primary mr-2 mb-3" href="/projects"><i class="fas fa-arrow-alt-circle-right mr-2"></i><span class="d-none d-md-inline">View</span> Portfolio</a>
-						<a target="_blank" rel="noopener" class="btn btn-secondary mb-3" href="/wp-content/uploads/2022/03/Tay-Duncan-CV.pdf"><i class="fas fa-file-alt mr-2"></i><span class="d-none d-md-inline">View</span> CV</a>
+						<a target="_blank" rel="noopener" class="btn btn-secondary mb-3" href="/wp-content/uploads/2022/04/Tay-Duncan-CV.pdf"><i class="fas fa-file-alt mr-2"></i><span class="d-none d-md-inline">View</span> CV</a>
 					</div>
 				</div>
 				<!--//media-body-->
