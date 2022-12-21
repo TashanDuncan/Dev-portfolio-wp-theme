@@ -30,7 +30,7 @@ $headerTitle = get_field('job_title', 7);
 
 	<header class="header text-center">
 		<div class="force-overflow">
-			<h1 class="blog-name pt-lg-4 mb-0"><a href="/"><?php echo $headerName?></a></h1>
+			<h1 class="blog-name pt-lg-4 mb-0"><a href="/"><?php echo $headerName ?></a></h1>
 
 			<nav class="navbar navbar-expand-lg navbar-dark">
 
@@ -41,15 +41,15 @@ $headerTitle = get_field('job_title', 7);
 				<div id="navigation" class="collapse navbar-collapse flex-column">
 					<div class="profile-section pt-3 pt-lg-0">
 						<?php
-						if(function_exists('the_custom_logo')){
-							
+						if (function_exists('the_custom_logo')) {
+
 							$custom_logo_id = get_theme_mod('custom_logo');
 							$logo = wp_get_attachment_image_src($custom_logo_id);
 						}
 						?>
-						<a href="/"><img class="profile-image mb-3 rounded-circle mx-auto" src="<?php echo $logo[0] ?>" alt="<?php echo $headerName?>"></a>
+						<a href="/"><img class="profile-image mb-3 rounded-circle mx-auto" src="<?php echo $logo[0] ?>" alt="<?php echo $headerName ?>"></a>
 
-						<div class="bio mb-3">Hi, my name is <?php echo $headerName?> and I'm a <?php echo $headerTitle?>. Welcome to my personal website!</div>
+						<div class="bio mb-3">Hi, my name is <?php echo $headerName ?> and I'm a <?php echo $headerTitle ?>. Welcome to my personal website!</div>
 						<!--//bio-->
 						<ul class="social-list list-inline py-2 mx-auto">
 							<li class="list-inline-item"><a href="https://twitter.com/codingmugen" target="_blank" rel="noopener"><i class="fab fa-twitter fa-fw"></i></a></li>
